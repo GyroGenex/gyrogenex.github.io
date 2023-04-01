@@ -1,0 +1,29 @@
+.computerHand{
+    position:fixed;
+    top:0;
+    color:white;
+    height: 150px;
+    border-color: white;
+    border-width: 100px;
+}
+
+.playerHand{
+    position:fixed;
+    bottom:0;
+    color:white;
+    height: 150px;
+    border-color: white;
+}
+
+body{
+    background-color: green;
+}
+
+span{
+    display:block;
+    position:absolute;
+    height:50px;
+    bottom:50px;
+    Width: 400px;
+    font-size: 30px;
+}
