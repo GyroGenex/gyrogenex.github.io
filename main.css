@@ -1,29 +1,115 @@
-.computerHand{
-    position:fixed;
-    top:0;
-    color:white;
-    height: 150px;
-    border-color: white;
-    border-width: 100px;
+html,
+body {
+    height: 100%;
 }
 
-.playerHand{
-    position:fixed;
-    bottom:0;
-    color:white;
-    height: 150px;
-    border-color: white;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%
 }
 
-body{
+
+
+.computerHand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: 200px;
+    width: 100%;
+    color: white;
+}
+
+.playerHand {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 100%;
+    color: white;
+}
+
+body {
     background-color: green;
 }
 
-span{
-    display:block;
-    position:absolute;
-    height:50px;
-    bottom:50px;
+span .description {
+    display: inline-block;
+    height: 50px;
+    bottom: 50px;
     Width: 400px;
     font-size: 30px;
+    text-align: left;
+    justify-self: left;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    flex-basis: 8em;
+    height: 12em;
+    border: 1px solid orange;
+    background: #FBFBFB;
+    box-shadow: 2px 2px 4px grey;
+    display: grid;
+    border-radius: 10%;
+    grid-template-columns: .5em 1.5em 4em 1.5em .5em;
+    grid-template-rows: 3em 5em 3em;
+    grid-column-gap: .5em;
+    grid-row-gap: .5em;
+    grid-template-areas:
+        ". . . top ."
+        ". . center . ."
+        ". bottom . . ."
+}
+
+.top {
+    grid-area: top;
+}
+
+.center {
+    grid-area: center;
+}
+
+.bottom {
+    grid-area: bottom;
+}
+
+.card h5 {
+    font-size: 5em;
+    margin: 0;
+    margin-top: -.3em;
+    color: black;
+}
+
+.card span {
+    color: black;
+    font-size: 2em;
+}
+
+.card-back span {
+    color: rgba(0, 0, 0, 0);
+}
+
+.card-back h5 {
+    color: rgba(0, 0, 0, 0);
+}
+
+.card-back {
+    padding: 5px;
+    background-color: blue;
+}
+
+.button {
+    display: none;
 }
