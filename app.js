@@ -159,7 +159,7 @@ $(() => {
                 $card.append($cardBottom);
 
                 if ($cardText.text() == "A") {
-                    console.log("Ace");
+                    // console.log("Ace");
                     hand.attr("countaces", parseInt(hand.attr("countaces")) + 1);
                 }
 
@@ -248,7 +248,7 @@ $(() => {
                             return;
                         }
 
-                        if (playerActualVlue > computerActualValue) {
+                        if (playerActualValue > computerActualValue) {
                             alert("player wins!");
                         } else if (playerActualValue < computerActualValue) {
                             alert("computer wins!");
