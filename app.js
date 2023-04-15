@@ -31,19 +31,19 @@ class Deck { // deck Class. it can shuffle and deal cards also returns number of
         this.cardArray.sort(() => Math.random() - 0.5);
     };
 
-    compare() {
-        let topCard = this.cardArray[0];
-        console.log(`Top card is ${topCard.face} of ${topCard.suit}`);
-        let bottomCard = this.cardArray[this.cardArray.length - 1];
-        console.log(`Bottom card is ${bottomCard.face} of ${bottomCard.suit}`);
-        if (topCard.value == bottomCard.value) {
-            console.log("It is a tie");
-        } else if (topCard.value > bottomCard.value) {
-            console.log(`${topCard.face} of ${topCard.suit} is bigger`);
-        } else {
-            console.log(`${bottomCard.face} of ${bottomCard.suit} is bigger`);
-        }
-    };
+    // compare() {
+    //     let topCard = this.cardArray[0];
+    //     console.log(`Top card is ${topCard.face} of ${topCard.suit}`);
+    //     let bottomCard = this.cardArray[this.cardArray.length - 1];
+    //     console.log(`Bottom card is ${bottomCard.face} of ${bottomCard.suit}`);
+    //     if (topCard.value == bottomCard.value) {
+    //         console.log("It is a tie");
+    //     } else if (topCard.value > bottomCard.value) {
+    //         console.log(`${topCard.face} of ${topCard.suit} is bigger`);
+    //     } else {
+    //         console.log(`${bottomCard.face} of ${bottomCard.suit} is bigger`);
+    //     }
+    // };
 
     giveCard() {
         return this.cardArray.pop();
@@ -252,7 +252,7 @@ $(() => {
                         }
 
                         if (playerActualValue > computerActualValue) {
-                            alert("Computer wins!");
+                            alert("Player wins!");
                         } else if (playerActualValue < computerActualValue) {
                             alert("Dealer wins!");
                         } else {
