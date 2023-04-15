@@ -55,6 +55,10 @@ span .description {
     align-items: center;
 }
 
+h1,form{
+    color:white;
+}
+
 .card {
     flex-basis: 8em;
     height: 12em;

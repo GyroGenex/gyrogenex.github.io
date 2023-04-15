@@ -124,7 +124,7 @@ $(() => {
             const $nextButton = $("<button>").text("next").addClass("next button");
             $choices.append($nextButton);
 
-            const $trueCount = $("<h5>").text(`True Count: ${0}`);
+            const $trueCount = $("<h5>").text(`True Count: ${0.00}`);
             $choices.append($trueCount);
             //board built
 
@@ -133,7 +133,7 @@ $(() => {
             const updateTrueCount = (card, deck) => {
                 if (card.hasClass("card-back") == false) {
                     count += parseInt(card.attr("hilo"));
-                    $trueCount.text(`True Count:${count / deck.numDecks()}`);
+                    $trueCount.text(`True Count:${(count / deck.numDecks()).toFixed(2)}`);
                 }
             };
             const assignCards = (hand) => {
@@ -175,18 +175,21 @@ $(() => {
             };
 
             const checkValue = (value, hand) => {
-                if (value > 21) {
-                    console.log("higher than 21");
+                let trueValue = value;
+                console.log()
+                if (trueValue > 21 && parseInt(hand.attr("countaces"))>0) {
+                    console.log("higher than 21" ) ;
                     // console.log(hand.attr("countaces"));
-                    if (parseInt(hand.attr("countaces")) > 0) {
-                        hand.attr("countaces", parseInt(hand.attr("countaces")) - 1);
-                        value -= 10;
-                        console.log(value);
-                        checkValue(value, hand);
-                    }
-                }
-
-                return value;
+                    console.log(trueValue);
+                    console.log(hand.attr("countaces"))
+                    hand.attr("countaces", parseInt(hand.attr("countaces")) - 1);
+                    console.log(hand.attr("countaces"))
+                    trueValue -= 10;
+                    console.log(trueValue);
+                    trueValue = checkValue(trueValue, hand);
+                }   
+                return(trueValue);
+                
             };
 
 
@@ -233,9 +236,9 @@ $(() => {
 
                     setTimeout(() => {
                         let playerActualValue = checkValue(playerValue, $playerHand);
-                        console.log(playerValue);
+                        console.log(playerActualValue);
                         let computerActualValue = checkValue(computerValue, $computerHand);
-                        console.log(computerValue);
+                        console.log(computerActualValue);
 
 
                         if (playerActualValue > 21) {
@@ -249,9 +252,9 @@ $(() => {
                         }
 
                         if (playerActualValue > computerActualValue) {
-                            alert("player wins!");
+                            alert("Computer wins!");
                         } else if (playerActualValue < computerActualValue) {
-                            alert("computer wins!");
+                            alert("Dealer wins!");
                         } else {
                             alert("It's a tie");
                         }
